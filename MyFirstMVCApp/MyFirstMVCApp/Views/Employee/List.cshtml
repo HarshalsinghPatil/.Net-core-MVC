@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Employee List";
+}
+
+<h2>@ViewData["Message"]</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <p style="color:green;">@TempData["SuccessMessage"]</p>
+}
+
