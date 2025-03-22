@@ -2,21 +2,22 @@
 
 namespace MyFirstMVCApp.Controllers
 {
+    [Route("staff")]//Routing for controller
     public class EmployeeController : Controller
     {
-        // Before of https://localhost:[port]/Employee/Index.
-        //Now, https://localhost:[port]/staff/list will show the Employee page 
-        [Route("staff/list")]
-        public IActionResult Index()
+        [Route("list")]// staff/list
+        public IActionResult List()
         {
-            
-            ViewBag.Message = "Employees list";
+            ViewBag.Message = "Employee List Page";
             return View();
-            
         }
 
-
-
-
+        [Route("create")]//staff/create
+        [HttpPost]//Post method
+        public IActionResult Create(string name, string department)
+        {
+            return Content($"Employee Created: {name}, Department: {department}");
+        }
     }
+
 }
