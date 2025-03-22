@@ -4,14 +4,15 @@ namespace MyFirstMVCApp.Controllers
 {
     public class EmployeeController : Controller
     {
-
-        //Index() is an Action Method that will return a View.
+        // Before of https://localhost:[port]/Employee/Index.
+        //Now, https://localhost:[port]/staff/list will show the Employee page 
+        [Route("staff/list")]
         public IActionResult Index()
         {
-            // Passing data through viewbag
-            ViewBag.Message = "Hello from EmployeeController!";
+            
+            ViewBag.Message = "Employees list";
             return View();
-            //tells the framework to look for a View(in folder Views/Employee/Index) with the same name (Index.cshtml) .
+            
         }
 
 
